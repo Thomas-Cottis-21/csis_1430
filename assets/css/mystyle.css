@@ -1,0 +1,114 @@
+/** @format */
+
+/* 
+    General
+*/
+
+body,
+html {
+	height: 100%;
+	margin: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
+    font-family: 'Playfair Display', sans-serif;
+}
+button,
+a,
+p, 
+li {
+	font-family: 'Playfair Display', sans-serif;
+}
+.section-title {
+    display: flex;
+    justify-content: center;
+    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
+    font-family: "Playfair Display", sans-serif;
+    font-size: 45px;
+}
+
+/* 
+    Hero
+*/
+
+#hero {
+	background-image: url('/assets/img/hero/snowy-mountain.jpg');
+	background-repeat: none;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+}
+@media (min-width: 500px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+#hero .hero-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+    text-align: center;
+	font-weight: 800;
+}
+#hero .hero-container h1 {
+    font-size: 25px;
+}
+#hero .hero-container .hero-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+}
+@media (min-width: 500px) {
+    #hero .hero-container .hero-links {
+        flex-direction: row;
+    }
+}
+#hero .hero-container .hero-links a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 
+    About me
+*/
+
+#about {
+	display: flex;
+	flex-direction: column;
+    background-color: #ebebeb;
+    text-align: center;
+}
+#about .header {
+	font-size: 19px;
+}
+
+/* 
+    List
+*/
+#list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#list .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#list .content ol {
+    width: 100%;
+    text-align: left;
+}
+@media (min-width: 500px) {
+    #list .content ol {
+        width: 75%;
+    }
+}
