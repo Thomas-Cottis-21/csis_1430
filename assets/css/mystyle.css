@@ -94,22 +94,22 @@ li {
 /* 
     List
 */
-#list {
+.list {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-#list .content {
+.list .content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#list .content ol {
+.list .content ol {
     width: 100%;
     text-align: left;
 }
 @media (min-width: 500px) {
-    #list .content ol {
+    .list .content ol {
         width: 75%;
     }
 }
