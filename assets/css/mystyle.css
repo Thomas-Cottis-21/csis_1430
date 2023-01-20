@@ -33,6 +33,35 @@ li {
 }
 
 /* 
+    Nav
+*/
+
+#navbar {
+    position: fixed;
+    background-color: rgba(93, 109, 126, .5);
+    width: 100%;
+    padding: 0px;
+    transition: ease-in-out;
+    transition-duration: .5s;
+}
+#navbar div {
+    display: flex;
+    flex-direction: row;
+}
+#navbar div .navbar-element {
+    color: #ebebeb;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0px;
+    transition: ease-in-out;
+    transition-duration: .2s;
+}
+#navbar div .navbar-element:hover {
+    background-color: #283747;
+}
+
+/* 
     Hero
 */
 
