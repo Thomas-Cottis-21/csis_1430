@@ -21,7 +21,7 @@ const navBarScroll = () => {
         }
     }
     /* console.log(Math.floor(window.scrollY) + "/" + window.innerHeight); */
-    console.log(navBar.scrollHeight + 15);
+    /* console.log(navBar.scrollHeight + 15); */
 }
 
 document.addEventListener("scroll", navBarScroll);
