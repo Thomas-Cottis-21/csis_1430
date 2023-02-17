@@ -31,6 +31,9 @@ li {
     font-family: "Playfair Display", sans-serif;
     font-size: 45px;
 }
+.top {
+    margin-top: 60px;
+}
 
 /* 
     Nav
@@ -61,6 +64,12 @@ li {
     background-color: #283747;
 }
 
+/*
+
+    ----- Index.html -----
+
+*/
+
 /* 
     Hero
 */
@@ -88,13 +97,16 @@ li {
 }
 #hero .hero-container h1 {
     font-size: 25px;
-    color: white;
+    color: black;
 }
 #hero .hero-container .hero-links {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: space-evenly;
+}
+#hero .hero-container .hero-links a:hover {
+    color: white;
 }
 @media (min-width: 500px) {
     #hero .hero-container .hero-links {
@@ -103,7 +115,7 @@ li {
 }
 #hero .hero-container .hero-links a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 /* 
@@ -137,8 +149,22 @@ li {
     width: 100%;
     text-align: left;
 }
+.list .content img {
+    width: 100%;
+    height: auto;
+    padding: 15px 0px 15px 0px;
+}
 @media (min-width: 500px) {
     .list .content ol {
         width: 75%;
     }
+}
+
+/*
+
+    ----- About.html -----
+
+*/
+#about-intro {
+    background-color: #ebebeb;
 }
