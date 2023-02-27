@@ -4,10 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- mystyle.css -->
+    <link rel="stylesheet" href="/assets/css/mystyle.css">
+    
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Playfair+Display&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+
     <title>Contact</title>
 </head>
 <body>
-    <h1>Contact page (content coming soon)</h1>
-    <a href="../index.html">Back home</a>
+    <section>
+        <div class="navbar" id="navbar">
+            <div>
+                <a href="../index.html" class="navbar-element">Home</a>
+                <a href="/pages/about.html" class="navbar-element">About</a>
+                <a href="/pages/family.html" class="navbar-element">Family</a>
+                <a href="/pages/hobbies.html" class="navbar-element">My Hobbies</a>
+                <a href="/pages/pictures.html" class="navbar-element">Picture</a>
+                <a href="/pages/contact.html" class="navbar-element">Contact</a>
+    
+            </div>
+        </div>
+    </section>
+        <div class="section-title top">
+            Let's go get a Hot Chocolate
+        </div>
+    <section id="contact">
+        <div>
+            <form>
+                <div class="data">
+                    <div class="bar-input">
+                        <input type="text" placeholder="Name">
+                        <input type="tel" placeholder="Number">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="time">
+                        <label for="time">When?</label>
+                        <select name="hour" id="hour">
+                            <option value="12">12</option>
+                        </select>
+                        <span>:</span>
+                        <select name="minute" id="minute">
+                            <option value="00">00</option>
+                        </select>
+                        <span>(more times coming soon!)</span>
+                    </div>
+                    <button type="submit" >Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact-research">
+        <div class="container">
+            <div class="section-title">
+                Why Hot Chocolate?
+            </div>
+            <p>Firstly, hot chocolate can be a delicious and comforting treat, particularly on a cold day. The rich and creamy taste of
+            hot chocolate can help warm you up from the inside out, and provide a sense of coziness and comfort. Whether you're
+            snuggled up under a blanket, sitting by a fire, or just taking a break from a busy day, hot chocolate can be a great way
+            to relax and unwind.
+            </p>
+            <p>
+            Secondly, hot chocolate can have some potential health benefits. Dark chocolate, which is often used to make hot
+            chocolate, contains antioxidants that may help protect against heart disease, and can also improve brain function and
+            mood. Additionally, some studies have suggested that drinking hot chocolate can help improve blood flow, which can
+            benefit overall heart health.
+            </p>
+            <p>
+            Thirdly, hot chocolate can be a versatile drink that can be customized to suit your preferences. You can add various
+            toppings such as whipped cream, marshmallows, sprinkles, or even spices like cinnamon or nutmeg to enhance the flavor of
+            your hot chocolate. You can also experiment with different types of milk or sweeteners, such as almond milk or honey, to
+            make your hot chocolate more personalized.
+            </p>
+            <p>
+            Lastly, hot chocolate can be a great way to connect with others. Whether you're enjoying a cup of hot chocolate with
+            friends or family members, or bonding with coworkers over a warm mug of cocoa, hot chocolate can provide a shared
+            experience that brings people together. Sharing a cup of hot chocolate can be a great way to socialize and build
+            connections with others, making it a great addition to any social gathering or event.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact-photos" class="photos">
+        <div class="gallery">
+            <img src="/assets/img/contact/pexels-ana-m-3152022.jpg" alt="hc">
+            <img src="/assets/img/contact/pexels-ylanite-koppens-1883382.jpg" alt="hc">
+        </div>
+    </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
