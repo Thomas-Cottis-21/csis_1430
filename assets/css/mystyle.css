@@ -281,6 +281,13 @@ li {
 #contact form .data div {
     margin: 15px;
 }
+#contact form .data .checkboxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
 
 #contact-research {
     background-color: #ebebeb;
