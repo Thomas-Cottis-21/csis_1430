@@ -214,3 +214,38 @@ li {
     justify-content: center;
     align-items: center;
 }
+    ----- Contact.html -----
+*/
+#contact {
+    margin-bottom: 15px;
+}
+#contact form {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    font-family: "Playfair Display", sans-serif;
+}
+#contact form .data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contact form .data div {
+    margin: 15px;
+}
+
+#contact-research {
+    background-color: #ebebeb;
+}
+
+#contact-photos .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#contact-photos img {
+    width: 60%;
+    padding: 15px;
+}
