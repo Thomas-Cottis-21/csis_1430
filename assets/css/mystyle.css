@@ -214,7 +214,40 @@ li {
     justify-content: center;
     align-items: center;
 }
+/* 
+
+    ----- Hobbies.html -----
+
+*/
+#hobby #intro .content {
+    padding: 0px 0px 35px 0px;
+}
+#hobby #intro .content div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#hobby #intro .content img {
+    width: 87%;
+    padding: 15px 0px 15px 0px;
+}
+@media (min-width: 800px) {
+    #hobby #intro .content div {
+        flex-direction: row;
+    }
+    #hobby #intro .content img {
+        width: 35%;
+    }
+}
+#hobby .research {
+    background-color: #ebebeb;
+    padding: 0px 0px 35px 0px;
+}
+/*
+
     ----- Contact.html -----
+
 */
 #contact {
     margin-bottom: 15px;
