@@ -244,6 +244,20 @@ li {
     background-color: #ebebeb;
     padding: 0px 0px 35px 0px;
 }
+
+/* 
+
+    ----- Pictures.html -----
+
+*/
+#pictures #story .gallery {
+    column-count: 4;
+    column-gap: 10px;
+}
+#pictures #story .gallery img {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+}
 /*
 
     ----- Contact.html -----
