@@ -2,6 +2,9 @@
 const navBar = document.getElementById("navbar");
 const navBarElements = document.getElementsByClassName("navbar-element");
 
+const navBarFrame = document.getElementById("nav-bar-frame");
+const navBarMobileIcon = document.getElementById("nav-bar-mobile-icon");
+
 /* RGBA variable */
 let R = "93";
 let G = "109";
@@ -25,3 +28,31 @@ const navBarScroll = () => {
 }
 
 document.addEventListener("scroll", navBarScroll);
+
+/* mobile nav menu */
+
+window.addEventListener("resize", (event) => {
+    const width = window.innerWidth;
+    console.log(width);
+    navBarMobile(width);
+})
+
+window.addEventListener("load", (event) => {
+    const width = window.innerWidth;
+    console.log(width);
+    navBarMobile(width);
+})
+
+const navBarMobile = (element) => {
+    if (Math.floor(element) <= 700) {
+        navBarMobileIcon.style.display = "inline";
+        for (let i = 0; i < navBarElements.length; i++) {
+            navBarElements[i].style.display = "none";
+        }
+    } else if (Math.floor(element) > 700) {
+        navBarMobileIcon.style.display = "none";
+        for (let i = 0; i < navBarElements.length; i++) {
+            navBarElements[i].style.display = "initial";
+        }
+    }
+}
