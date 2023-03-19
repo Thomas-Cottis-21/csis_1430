@@ -49,16 +49,25 @@ window.addEventListener("load", (event) => {
 
 const navBarMobile = (element) => {
     if (Math.floor(element) <= 700) {
-        navBarMobileIcon.style.display = "inline";
-        navBarMobileIcon.style.width = navBarDim + "px";
-        navBarMobileIcon.style.height = navBarDim + "px";
         for (let i = 0; i < navBarElements.length; i++) {
             navBarElements[i].style.display = "none";
         }
+        navBarMobileIcon.style.display = "inline";
+        navBarMobileIcon.style.width = navBarDim + "px";
+        navBarMobileIcon.style.height = navBarDim + "px";
     } else if (Math.floor(element) > 700) {
         navBarMobileIcon.style.display = "none";
         for (let i = 0; i < navBarElements.length; i++) {
             navBarElements[i].style.display = "initial";
         }
+    }
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches("#nav-bar-mobile-icon")) {
+        console.log("click outside dropdown");
+        document.getElementById("nav-bar-mobile-dropdown").style.display = "none";
+    } else {
+        document.getElementById("nav-bar-mobile-dropdown").style.display = "flex";
     }
 }
