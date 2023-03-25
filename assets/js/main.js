@@ -88,10 +88,14 @@ const words = [
 ];
 
 const wordContainer = document.getElementById("word-container");
+const newWordButton = document.getElementById("new-word");
+const errorContainer = document.getElementById("error-container");
+
+
+const wordSelected = document.getElementsByClassName("letter");
 
 const wordSelector = () => {
     const index = Math.floor(Math.random() * words.length);
-    const wordSelected = document.getElementsByClassName("letter");
 
     if (wordSelected.length == 0) {
         for (let i = 0; i < words[index].length; i++) {
@@ -100,11 +104,27 @@ const wordSelector = () => {
             letter.innerText = words[index][i];
             wordContainer.appendChild(letter);
         }
+        sessionStorage.setItem("active-word", words[index]);
     } else {
-        console.log(wordSelected);
+        errorContainer.innerText = "Word already exists";
     }
     
 }
 
-window.addEventListener("click", wordSelector);
+const letterSelector = () => {
+    const userInput = document.getElementById("guess").value;
+
+    const activeWord = sessionStorage.getItem("active-word");
+    
+    if (activeWord.indexOf(userInput)) {
+        console.log("Letter found!")
+    } else {
+        console.log("Letter not found!");
+    }
+    console.log(activeWord);
+    console.log(userInput);
+}
+
+newWordButton.addEventListener("click", wordSelector);
+document.addEventListener("keyup", letterSelector);
 
