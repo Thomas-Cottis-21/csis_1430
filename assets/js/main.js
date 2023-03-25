@@ -71,3 +71,40 @@ window.onclick = function(event) {
         document.getElementById("nav-bar-mobile-dropdown").style.display = "flex";
     }
 }
+
+//Hangman Game
+
+const words = [
+    "Peru",
+    "Work",
+    "Computer",
+    "Glasses",
+    "File",
+    "Trial",
+    "Mountian",
+    "Beauty",
+    "Light",
+    "Felicidad"
+];
+
+const wordContainer = document.getElementById("word-container");
+
+const wordSelector = () => {
+    const index = Math.floor(Math.random() * words.length);
+    const wordSelected = document.getElementsByClassName("letter");
+
+    if (wordSelected.length == 0) {
+        for (let i = 0; i < words[index].length; i++) {
+            const letter = document.createElement("div");
+            letter.classList.add("letter");
+            letter.innerText = words[index][i];
+            wordContainer.appendChild(letter);
+        }
+    } else {
+        console.log(wordSelected);
+    }
+    
+}
+
+window.addEventListener("click", wordSelector);
+

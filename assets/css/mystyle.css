@@ -27,8 +27,8 @@ li {
 .section-title {
     display: flex;
     justify-content: center;
-    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
     font-family: "Playfair Display", sans-serif;
+    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
     font-size: 45px;
     text-align: center;
 }
@@ -38,6 +38,10 @@ li {
 
 .hover-icon:hover {
     cursor: pointer;
+}
+
+p {
+    text-indent: 50px;
 }
 
 /* 
@@ -339,4 +343,21 @@ li {
 #contact-photos img {
     width: 60%;
     padding: 15px;
+}
+
+/* 
+
+    ----- Hangman.html -----
+
+*/
+#game .word-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    justify-content: space-evenly;
+}
+#game .word-container .letter {
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 60px;
 }
