@@ -93,11 +93,7 @@ const wordBuild = new Array();
 
 const getWord = () => {
     wordIndex = Math.floor(Math.random() * words.length);
-
-    for (i = 0; i < wordIndex; i++) {
-        sessionStorage.setItem("active-word", words[wordIndex].toUpperCase());
-        wordBuild.push('-');
-    }
+    sessionStorage.setItem("active-word", words[wordIndex].toUpperCase());
 }
 
 
@@ -118,7 +114,14 @@ const replaceWord = () => {
             }
         }
     }
+    activeWordContainer.innerHTML = "";
     console.log(wordBuild);
+    for (i = 0; i < wordBuild.length; i++) {
+        let letter = document.createElement("div");
+        letter.classList.add("letter");
+        letter.innerText = wordBuild[i];
+        activeWordContainer.appendChild(letter);
+    }
 }
 
 const viewWord = () => {
@@ -127,8 +130,10 @@ const viewWord = () => {
     for (i = 0; i < activeWord.length; i++) {
             let letter = document.createElement("div");
             letter.classList.add("letter");
-            letter.innerText = activeWord[i];
+            letter.innerText = "-";
             activeWordContainer.appendChild(letter);
+
+            wordBuild.push('-');
     }
 }
 newWordButton.addEventListener("click", function() {
