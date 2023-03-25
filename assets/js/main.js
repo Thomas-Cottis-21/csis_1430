@@ -90,6 +90,8 @@ const words = [
 const activeWordContainer = document.getElementById("word-container");
 const newWordButton = document.getElementById("new-word-button");
 const wordBuild = new Array();
+const usedLettersContainer = document.getElementById("used-letters");
+const usedLetters = new Array();
 
 const getWord = () => {
     wordIndex = Math.floor(Math.random() * words.length);
@@ -100,6 +102,7 @@ const getWord = () => {
 const clearWord = () => {
     activeWordContainer.innerHTML = "";
     wordBuild.splice(0, wordBuild.length);
+    usedLettersContainer.innerHTML = "";
 }
 
 const replaceWord = () => {
@@ -112,6 +115,16 @@ const replaceWord = () => {
             } else {
                 continue;
             }
+        }
+    } else {
+        if (!usedLetters.includes(userInput)) {
+            usedLetters.push(userInput);
+            let usedLetter = document.createElement("div");
+            usedLetter.classList.add('letter');
+            usedLetter.innerText = userInput
+            usedLettersContainer.appendChild(usedLetter);
+        } else {
+            return;
         }
     }
     activeWordContainer.innerHTML = "";
@@ -136,6 +149,8 @@ const viewWord = () => {
             wordBuild.push('-');
     }
 }
+
+
 newWordButton.addEventListener("click", function() {
     clearWord();
     getWord();
