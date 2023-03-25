@@ -357,7 +357,7 @@ p {
     align-content: center;
     justify-content: space-evenly;
 }
-#game .word-container .letter {
+#game .word-container .letter, .letter-found {
     font-family: "Sofia Sans Semi Condensed", sans-serif;
     font-size: 60px;
 }

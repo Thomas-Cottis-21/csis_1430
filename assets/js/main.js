@@ -87,44 +87,58 @@ const words = [
     "Felicidad"
 ];
 
-const wordContainer = document.getElementById("word-container");
-const newWordButton = document.getElementById("new-word");
-const errorContainer = document.getElementById("error-container");
+const activeWordContainer = document.getElementById("word-container");
+const newWordButton = document.getElementById("new-word-button");
+const wordBuild = new Array();
+
+const getWord = () => {
+    wordIndex = Math.floor(Math.random() * words.length);
+
+    for (i = 0; i < wordIndex; i++) {
+        sessionStorage.setItem("active-word", words[wordIndex].toUpperCase());
+        wordBuild.push('-');
+    }
+}
 
 
-const wordSelected = document.getElementsByClassName("letter");
+const clearWord = () => {
+    activeWordContainer.innerHTML = "";
+    wordBuild.splice(0, wordBuild.length);
+}
 
-const wordSelector = () => {
-    const index = Math.floor(Math.random() * words.length);
-
-    if (wordSelected.length == 0) {
-        for (let i = 0; i < words[index].length; i++) {
-            const letter = document.createElement("div");
-            letter.classList.add("letter");
-            letter.innerText = words[index][i];
-            wordContainer.appendChild(letter);
+const replaceWord = () => {
+    let activeWord = sessionStorage.getItem("active-word");
+    const userInput = document.getElementById("guess").value.toUpperCase();
+    if (activeWord.includes(userInput)) {
+        for (i = 0; i < activeWord.length; i++) {
+            if (userInput == activeWord[i]) {
+                wordBuild.splice(i, 1, activeWord[i]);
+            } else {
+                continue;
+            }
         }
-        sessionStorage.setItem("active-word", words[index]);
-    } else {
-        errorContainer.innerText = "Word already exists";
     }
-    
+    console.log(wordBuild);
 }
 
-const letterSelector = () => {
-    const userInput = document.getElementById("guess").value;
+const viewWord = () => {
+    let activeWord = sessionStorage.getItem("active-word");
 
-    const activeWord = sessionStorage.getItem("active-word");
-    
-    if (activeWord.indexOf(userInput)) {
-        console.log("Letter found!")
-    } else {
-        console.log("Letter not found!");
+    for (i = 0; i < activeWord.length; i++) {
+            let letter = document.createElement("div");
+            letter.classList.add("letter");
+            letter.innerText = activeWord[i];
+            activeWordContainer.appendChild(letter);
     }
-    console.log(activeWord);
-    console.log(userInput);
 }
+newWordButton.addEventListener("click", function() {
+    clearWord();
+    getWord();
+    viewWord();
+});
 
-newWordButton.addEventListener("click", wordSelector);
-document.addEventListener("keyup", letterSelector);
+document.addEventListener("input", function() {
+    replaceWord();
+});
+
 
