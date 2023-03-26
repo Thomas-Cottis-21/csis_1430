@@ -364,7 +364,7 @@ p {
 #game .user-input button {
     transition: ease-in-out;
     transition-duration: .3s;
-    background-color: white;
+    background-color: rgba(93, 109, 126, .5);
     color:  #283747;
     font-family: "Sofia Sans Semi Condensed", sans-serif;
     font-size: 25px;
@@ -381,9 +381,20 @@ p {
     color:  #283747;
     text-align: center;
     font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
 }
 #game .user-input input:focus {
     outline: none;
     border-bottom: 1px solid #283747;
+}
+#game .guesses {
+    color:  #283747;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+#game .lost {
+    color:  #d22d27;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
 }
 

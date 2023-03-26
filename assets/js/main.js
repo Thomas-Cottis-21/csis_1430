@@ -101,8 +101,9 @@ const getWord = () => {
     wordIndex = Math.floor(Math.random() * words.length);
     sessionStorage.setItem("active-word", words[wordIndex].toUpperCase());
     document.getElementById("guess").style.display = "initial";
-    let numGuesses = Math.floor(sessionStorage.getItem("active-word").length * 2);
-    sessionStorage.setItem("guess-count", numGuesses);
+
+    document.getElementById("guess").value = "";
+    document.getElementById("guess").disabled = false;
 }
 
 
@@ -110,6 +111,7 @@ const clearWord = () => {
     activeWordContainer.innerHTML = "";
     wordBuild.splice(0, wordBuild.length);
     usedLettersContainer.innerHTML = "";
+    document.getElementById("error-container").innerText = "";
 }
 
 const replaceWord = () => {
@@ -131,10 +133,7 @@ const replaceWord = () => {
             usedLetter.innerText = userInput
             usedLettersContainer.appendChild(usedLetter);
 
-            guessCount = sessionStorage.getItem('guess-count');
-            sessionStorage.setItem("guess-count", guessCount-1);
-
-            guessContainer.innerText = sessionStorage.getItem("guess-count");
+            guessHandler();
         } else {
             return;
         }
@@ -162,10 +161,30 @@ const viewWord = () => {
     }
 }
 
+const guessInitiate = () => {
+    let numGuesses = Math.floor(sessionStorage.getItem("active-word").length * 2);
+    sessionStorage.setItem("guess-count", numGuesses);
+    guessContainer.innerText = numGuesses;
+}
+
+const guessHandler = () => {
+    sessionStorage.setItem("guess-count", sessionStorage.getItem("guess-count")-1);
+    guessCount = sessionStorage.getItem('guess-count');
+
+    guessContainer.innerText = sessionStorage.getItem("guess-count");
+
+    if (guessCount == 0) {
+        document.getElementById("error-container").innerText = "You Lost!";
+        document.getElementById("guess").disabled = true;
+        document.getElementById("guess").value = "";
+    }
+}
+
 
 newWordButton.addEventListener("click", function() {
     clearWord();
     getWord();
+    guessInitiate();
     viewWord();
 });
 
