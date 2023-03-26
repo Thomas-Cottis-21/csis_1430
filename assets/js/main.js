@@ -75,17 +75,34 @@ window.onclick = function(event) {
 //Hangman Game
 
 const words = [
-    "Peru",
-    "Work",
-    "Computer",
-    "Glasses",
-    "File",
-    "Trial",
-    "Mountian",
-    "Beauty",
-    "Light",
-    "Felicidad"
-];
+    "apple",
+    "banana",
+    "car",
+    "dog",
+    "elephant",
+    "fan",
+    "grape",
+    "house",
+    "internet",
+    "jacket",
+    "kite",
+    "lemon",
+    "money",
+    "notebook",
+    "orange",
+    "phone",
+    "queen",
+    "rain",
+    "shoes",
+    "table",
+    "umbrella",
+    "vase",
+    "water",
+    "xylophone",
+    "yarn",
+    "zebra"
+  ];
+  
 
 const activeWordContainer = document.getElementById("word-container");
 const newWordButton = document.getElementById("new-word-button");
@@ -111,7 +128,7 @@ const clearWord = () => {
     activeWordContainer.innerHTML = "";
     wordBuild.splice(0, wordBuild.length);
     usedLettersContainer.innerHTML = "";
-    document.getElementById("error-container").innerText = "";
+    document.getElementById("lose-container").innerText = "";
 }
 
 const replaceWord = () => {
@@ -146,6 +163,7 @@ const replaceWord = () => {
         letter.innerText = wordBuild[i];
         activeWordContainer.appendChild(letter);
     }
+    document.getElementById("guess").value = "";
 }
 
 const viewWord = () => {
@@ -174,9 +192,19 @@ const guessHandler = () => {
     guessContainer.innerText = sessionStorage.getItem("guess-count");
 
     if (guessCount == 0) {
-        document.getElementById("error-container").innerText = "You Lost!";
+        document.getElementById("lose-container").innerText = "You Lost!";
         document.getElementById("guess").disabled = true;
         document.getElementById("guess").value = "";
+    }
+}
+
+const winner = () => {
+    if (!wordBuild.some(item => item.includes("-"))) {
+        document.getElementById("win-container").innerText = "You Won!";
+        document.getElementById("guess").disabled = true;
+        document.getElementById("guess").value = "";
+    } else {
+        return;
     }
 }
 
@@ -190,6 +218,7 @@ newWordButton.addEventListener("click", function() {
 
 document.addEventListener("input", function() {
     replaceWord();
+    winner();
 });
 
 

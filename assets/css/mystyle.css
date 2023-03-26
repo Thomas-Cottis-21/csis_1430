@@ -392,8 +392,13 @@ p {
     font-family: "Sofia Sans Semi Condensed", sans-serif;
     font-size: 25px;
 }
-#game .lost {
+#game .lose-container {
     color:  #d22d27;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+#game .win-container {
+    color: #80c839;
     font-family: "Sofia Sans Semi Condensed", sans-serif;
     font-size: 25px;
 }
