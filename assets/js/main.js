@@ -129,6 +129,7 @@ const clearWord = () => {
     wordBuild.splice(0, wordBuild.length);
     usedLettersContainer.innerHTML = "";
     document.getElementById("lose-container").innerText = "";
+    document.getElementById("win-container").innerText = "";
 }
 
 const replaceWord = () => {
@@ -163,7 +164,6 @@ const replaceWord = () => {
         letter.innerText = wordBuild[i];
         activeWordContainer.appendChild(letter);
     }
-    document.getElementById("guess").value = "";
 }
 
 const viewWord = () => {
@@ -192,7 +192,7 @@ const guessHandler = () => {
     guessContainer.innerText = sessionStorage.getItem("guess-count");
 
     if (guessCount == 0) {
-        document.getElementById("lose-container").innerText = "You Lost!";
+        document.getElementById("lose-container").innerText = "You Lost! The word was " + sessionStorage.getItem("active-word");
         document.getElementById("guess").disabled = true;
         document.getElementById("guess").value = "";
     }
