@@ -92,10 +92,17 @@ const newWordButton = document.getElementById("new-word-button");
 const wordBuild = new Array();
 const usedLettersContainer = document.getElementById("used-letters");
 const usedLetters = new Array();
+const guessContainer = document.getElementById("num-guess");
+
+sessionStorage.setItem("active-word", "");
+sessionStorage.setItem("guess-count", "");
 
 const getWord = () => {
     wordIndex = Math.floor(Math.random() * words.length);
     sessionStorage.setItem("active-word", words[wordIndex].toUpperCase());
+    document.getElementById("guess").style.display = "initial";
+    let numGuesses = Math.floor(sessionStorage.getItem("active-word").length * 2);
+    sessionStorage.setItem("guess-count", numGuesses);
 }
 
 
@@ -123,6 +130,11 @@ const replaceWord = () => {
             usedLetter.classList.add('letter');
             usedLetter.innerText = userInput
             usedLettersContainer.appendChild(usedLetter);
+
+            guessCount = sessionStorage.getItem('guess-count');
+            sessionStorage.setItem("guess-count", guessCount-1);
+
+            guessContainer.innerText = sessionStorage.getItem("guess-count");
         } else {
             return;
         }

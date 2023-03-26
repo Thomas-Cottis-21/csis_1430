@@ -357,7 +357,33 @@ p {
     align-content: center;
     justify-content: space-evenly;
 }
-#game .word-container .letter, .letter-found {
+#game .word-container .letter, .letter {
     font-family: "Sofia Sans Semi Condensed", sans-serif;
     font-size: 60px;
 }
+#game .user-input button {
+    transition: ease-in-out;
+    transition-duration: .3s;
+    background-color: white;
+    color:  #283747;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+}
+#game .user-input button:hover {
+    background-color:  #283747;
+    color: white;
+}
+#game .user-input input {
+    display: none;
+    border: none;
+    color:  #283747;
+    text-align: center;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+}
+#game .user-input input:focus {
+    outline: none;
+    border-bottom: 1px solid #283747;
+}
+
