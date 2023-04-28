@@ -27,12 +27,21 @@ li {
 .section-title {
     display: flex;
     justify-content: center;
-    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
     font-family: "Playfair Display", sans-serif;
+    /* font-family: "Sofia Sans Semi Condensed", sans-serif; */
     font-size: 45px;
+    text-align: center;
 }
 .top {
     padding-top: 60px;
+}
+
+.hover-icon:hover {
+    cursor: pointer;
+}
+
+p {
+    text-indent: 50px;
 }
 
 /* 
@@ -50,8 +59,9 @@ li {
 #navbar div {
     display: flex;
     flex-direction: row;
-}
+} 
 #navbar div .navbar-element {
+    display: none;
     color: #ebebeb;
     text-decoration: none;
     font-size: 18px;
@@ -59,9 +69,28 @@ li {
     margin: 0px;
     transition: ease-in-out;
     transition-duration: .2s;
+    white-space: nowrap;
 }
 #navbar div .navbar-element:hover {
     background-color: #283747;
+}
+
+/* navbar mobile dropdown */
+#nav-bar-mobile-dropdown {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    background-color: #ebebeb;
+    width: 100%;
+}
+#nav-bar-mobile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+#nav-bar-mobile-dropdown a:hover {
+    background-color: #283747;
+    color:whitesmoke;
 }
 
 /*
@@ -170,7 +199,110 @@ li {
 }
 
 /* 
+
+    ----- Family.html -----
+
+*/
+#family .intro {
+    background-color: #ebebeb;
+    padding-bottom: 35px;
+}
+#family #gallery {
+    column-count: 1;
+    column-gap: 10px;
+}
+@media (min-width: 500px) {
+    #family #gallery {
+        column-count: 2;
+        column-gap: 10px;
+    }
+}
+@media (min-width: 750px) {
+    #family #gallery {
+        column-count: 3;
+        column-gap: 10px;
+    }
+}
+@media (min-width: 1100px) {
+    #family #gallery {
+        column-count: 4;
+        column-gap: 10px;
+    }
+}
+#family #gallery div img {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+}
+#family #individual {
+    background-color: #ebebeb;
+}
+#family #individual .content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+
+    ----- Hobbies.html -----
+
+*/
+#hobby #intro .content {
+    padding: 0px 0px 35px 0px;
+}
+#hobby #intro .content div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#hobby #intro .content img {
+    width: 87%;
+    padding: 15px 0px 15px 0px;
+}
+@media (min-width: 800px) {
+    #hobby #intro .content div {
+        flex-direction: row;
+    }
+    #hobby #intro .content img {
+        width: 35%;
+    }
+}
+#hobby .research {
+    background-color: #ebebeb;
+    padding: 0px 0px 35px 0px;
+}
+
+/* 
+
+    ----- Pictures.html -----
+
+*/
+#pictures #story .gallery img {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+}
+#pictures #story .gallery {
+    column-count: 2;
+    column-gap: 10px;
+}
+@media (min-width: 800px) {
+    #pictures #story .gallery {
+        column-count: 3;
+        column-gap: 10px;
+    }
+}
+@media (min-width: 1100px) {
+    #pictures #story .gallery {
+        column-count: 4;
+        column-gap: 10px;
+    }
+}
+/*
+
     ----- Contact.html -----
+
 */
 #contact {
     margin-bottom: 15px;
@@ -190,6 +322,13 @@ li {
 #contact form .data div {
     margin: 15px;
 }
+#contact form .data .checkboxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
 
 #contact-research {
     background-color: #ebebeb;
@@ -205,3 +344,63 @@ li {
     width: 60%;
     padding: 15px;
 }
+
+/* 
+
+    ----- Hangman.html -----
+
+*/
+#game .word-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#game .letter {
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 35px;
+}
+#game .user-input button {
+    transition: ease-in-out;
+    transition-duration: .3s;
+    background-color: rgba(93, 109, 126, .5);
+    color:  #283747;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+}
+#game .user-input button:hover {
+    background-color:  #283747;
+    color: white;
+}
+#game .user-input input {
+    display: none;
+    border: none;
+    color:  #283747;
+    text-align: center;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+#game .user-input input:focus {
+    outline: none;
+    border-bottom: 1px solid #283747;
+}
+#game .guesses {
+    color:  #283747;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+#game .lose-container {
+    color:  #d22d27;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+#game .win-container {
+    color: #80c839;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 25px;
+}
+
